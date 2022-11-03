@@ -14,7 +14,7 @@ void dfsDijkstra(int src) {
     dq.push_front({0, src});
     
     while(!dq.empty()) {
-        int dist = dq.front().first * -1;
+        int dist = dq.front().first;
         int node = dq.front().second;
         dq.pop_front();
         
@@ -23,7 +23,7 @@ void dfsDijkstra(int src) {
             if(dist + it.second < distance[it.first]) {
                 distance[it.first] = dist+it.second;
                 if(it.second == 0) dq.push_front({-1 * distance[it.first], it.first});
-                else dq.push_back({-1 * distance[it.first], it.first});
+                else dq.push_back({distance[it.first], it.first});
             }
         }
     }

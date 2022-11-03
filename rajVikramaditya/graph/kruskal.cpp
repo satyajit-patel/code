@@ -13,6 +13,9 @@ struct node {
         this->w = w;
     }
 };
+bool comp(node p1, node p2) {
+    return p1.w < p2.w;
+}
 class DSU {
 private:
     vi par, size;
@@ -43,9 +46,6 @@ public:
         }
     }
 };
-bool comp(node p1, node p2) {
-    return p1.w < p2.w;
-}
 int main() {
     int n, m; cin>>n>>m;
     vector<node> edges;
